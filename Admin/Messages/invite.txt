@@ -1,0 +1,6 @@
+Hello {0}! Thanks for inviting **BytesBump** to your server, **{1}**!
+This bot was developed by [BytesToBits Advertisements](https://discord.gg/jT8wGa9s5g), a server owned by [BytesToBits](https://discord.gg/8akycDh)!
+
+To start; please use `=setup`, and you'll be asked a few questions to setup your server's profile and start bumping!
+
+• Remember! This bot is 100% free, and there is no premium mode! All of our members get to have the same exact audience, as our main goal is to help you promote your server!

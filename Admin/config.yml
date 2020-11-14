@@ -1,0 +1,21 @@
+main:
+  token: "token"
+  prefix: "="
+  version: 0.6-Beta
+  mongo: "mongo-uri"
+  managers: 
+    - 219567539049594880
+
+emojis:
+  check: "<:check2:773157375867486258>"
+  cross: "<:cross3:773157385824763914>"
+  info: "<:Info:721649186885468201>"
+  warn: "<:MuteE:747791949452279859>"
+  verify: "<:Verified:718740227941728327>"
+  loading: "<a:hahaok:747135978249912441>"
+  ccheck: "<a:animcheck:773157387124998215>"
+  online: "<:online:718732503837310998>"
+  boost: "<a:Boosted:752114867707707412>"
+  emojis: "<:Roles:718824777141321728>"
+  region: "<:na:745922448716726272>"
+  #Most of these emojis will most likely be unavailable to you as they are from a private server.
