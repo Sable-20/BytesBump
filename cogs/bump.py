@@ -51,7 +51,7 @@ class Bump(commands.Cog):
       color=discord.Color.orange()
     ))
     success, fail = 0, 0
-    channels = [i["listing"] for i in db.get_all()]
+    channels = [i["listing"] for i in db.get_all() if not i["listing"] == None]
     for channel in channels:
       try:
         await asyncio.sleep(1)
