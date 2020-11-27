@@ -54,7 +54,7 @@ class Bump(commands.Cog):
     channels = [i["listing"] for i in db.get_all() if not i["listing"] == None]
     for channel in channels:
       try:
-        await asyncio.sleep(1)
+        await asyncio.sleep(0.3)
         await self.bot.get_channel(channel).send(embed=embed)
         success+=1
       except:
@@ -69,17 +69,19 @@ class Bump(commands.Cog):
           color=discord.Color.red()
         ))
         fail+=1
+          
     await msg.edit(embed=discord.Embed(
       title=f"{emoji('ccheck')} Guild Bumped!",
       description=f"Your server was successfully bumped to `{success}` guilds! There were {fail} errors encountered on guilds, and they were removed from the database!",
       color=discord.Color.green()
     ))
     await asyncio.sleep(60)
-    return await msg.edit(embed=discord.Embed(
-      title="Server was bumped, but this is the MOTD!",
+    await msg.edit(embed=discord.Embed(
+      title="BytesBump | Promotional",
       description=Files.read("Admin/Messages/promotional.txt"),
       color=discord.Color.green()
       ))
+    
     
     
 def setup(bot):

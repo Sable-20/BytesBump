@@ -37,5 +37,3 @@ class Database:
 
   def update(guild, values):
     collection.update_one({"_id":guild.id}, {"$set":values})
-
-

@@ -68,7 +68,7 @@ async def eval(ctx, *, body: str):
 @bot.event
 async def on_ready():
     print("Bot is ready!")
-    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="over BytesToBits"))
+    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.playing, name=f"=help | {len(bot.users)} Users"))
 
 @is_owner()
 @bot.command(hidden=True)

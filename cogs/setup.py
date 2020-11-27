@@ -17,9 +17,10 @@ class Setup(commands.Cog):
         description=Files.read("Admin/Messages/invite.txt").format(guild.owner.mention,guild.name),
         color=discord.Color.blurple()
       )
-      .set_author(name="BytesBump", icon_url=self.bot.user.avatar_url, url="https://discord.gg/jT8wGa9s5g"))
+      .set_author(name="BytesBump", icon_url=self.bot.user.avatar_url, url="https://discord.gg/8akycDh"))
     except: pass
-    return db.add(guild)
+    db.add(guild)
+    return
   
   @commands.Cog.listener()
   async def on_guild_remove(self, guild):
@@ -96,7 +97,7 @@ class Setup(commands.Cog):
     }
     db.update(ctx.guild, post)
     return await ctx.send(embed=discord.Embed(
-      description=f"{emoji('ccheck')} Your server is ready to be bumped! Use `=bump` to bump it every 1 hour!",
+      description=f"{emoji('ccheck')} Your server is ready to be bumped! Use `{Files.config('main', 'prefix')}bump` to bump it every 1 hour!",
       color=discord.Color.green()
     ))
 

@@ -9,7 +9,6 @@ class Help(commands.Cog):
 
   @commands.command()
   async def help(self, ctx):
-    print(1)
     return await ctx.send(embed=discord.Embed(
       title="BytesBump | Help",
       description=Files.read("Admin/Help/front.page"),

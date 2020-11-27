@@ -1,5 +1,6 @@
-import discord
+import discord, asyncio
 from Admin.admin import Files
+from discord.ext import tasks
 
 commands = discord.ext.commands
 emoji = Files.emoji
@@ -7,6 +8,13 @@ emoji = Files.emoji
 class General(commands.Cog):
   def __init__(self, bot):
     self.bot = bot
+    self.update_status.start()
+
+  @tasks.loop(seconds=60)
+  async def update_status(self):
+    print("Updating users!")
+    await asyncio.sleep(2)
+    return await self.bot.change_presence(activity=discord.Activity(type=discord.ActivityType.playing, name=f"=help | {len(self.bot.users)} Users"))
 
   @commands.command()
   async def support(self, ctx):

@@ -1,8 +1,8 @@
 main:
-  token: "token"
-  prefix: "="
-  version: 0.6-Beta
-  mongo: "mongo-uri"
+  token: "YOUR-TOKEN"
+  prefix: "YOUR-PREFIX"
+  version: 1.0
+  mongo: "MONGO-URI"
   managers: 
     - 219567539049594880
 
@@ -18,4 +18,3 @@ emojis:
   boost: "<a:Boosted:752114867707707412>"
   emojis: "<:Roles:718824777141321728>"
   region: "<:na:745922448716726272>"
-  #Most of these emojis will most likely be unavailable to you as they are from a private server.
