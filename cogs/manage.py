@@ -32,9 +32,8 @@ class Events(commands.Cog):
             discord.errors.Forbidden: "I do not have permission to use this command"
         }
 
-        global time
         if isinstance(error, commands.CommandNotFound):
-            pass #this is just to make sure it doesnt send a message when command not found
+            pass # this is just to make sure it doesnt send a message when command not found
         elif isinstance(error, commands.CommandOnCooldown):
             time = error.retry_after
             time = convert(time)
