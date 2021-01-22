@@ -48,29 +48,17 @@ class Events(commands.Cog):
                 message = f'Retry this command after **{x[2]}** minutes and **{x[3]}** seconds!'
             elif x[3] != '0' and x[1] == '0' and x[2] == '0':
                 message = f'Retry this command after **{x[3]}** seconds!'
-            msg = await ctx.send(message)
-            await sleep(3)
-            await msg.delete()
+            msg = await ctx.send(message, delete_after=3.0)
         elif isinstance(error, commands.MissingRequiredArgument):
-            msg = await ctx.send("**You have made an error.**\n\n{}".format(error.param))
-            await sleep(3) #missing params, can get rid of
-            await msg.delete()
+            msg = await ctx.send("**You have made an error.**\n\n{}".format(error.param), delete_after=3.0)
         elif isinstance(error, commands.ExtensionAlreadyLoaded):
-            msg = await ctx.send('The cog {} is already loaded.'.format(error.args[0]))
-            await sleep(3) #cog is already loaded
-            await msg.delete()
+            msg = await ctx.send('The cog {} is already loaded.'.format(error.args[0]), delete_after=3.0)
         elif isinstance(error, commands.MissingPermissions):
-            msg = await ctx.send('You need **{}** perms to complete this actions.'.format(error.missing_perms[0]))
-            await sleep(3) #user missing perms
-            await msg.delete()
+            msg = await ctx.send('You need **{}** perms to complete this actions.'.format(error.missing_perms[0]), delete_after=3.0)
         elif isinstance(error, commands.BotMissingAnyRole):
-            msg = await ctx.send('**Woops!**\n\nLooks like i am missing the {} role.'.format(error.missing_role))
-            await sleep(3) #bot missing role
-            await msg.delete()
+            msg = await ctx.send('**Woops!**\n\nLooks like i am missing the {} role.'.format(error.missing_role), delete_after=3.0)
         elif isinstance(error, commands.errors.NotOwner):
-            msg = await ctx.send('Only **{}** can use this command.'.format(ctx.guild.owner))
-            await sleep(3) #owner only commmands
-            await msg.delete()
+            msg = await ctx.send('Only **{}** can use this command.'.format(ctx.guild.owner), delete_after=3.0)
         else:
             await ctx.send(switch.get(type(error), "an unknown error occured"), delete_after=3.0)
         #uncomment to log every error
