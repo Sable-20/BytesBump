@@ -11,7 +11,7 @@ def convert(time): #makes life easier and looks better overall
     minutes = time // 60
     time %= 60
     seconds = time
-    return "%d:%d:%d:%d" % (day, hour, minutes, seconds)
+    return f"{day}:{hour}:{minutes}:{seconds}"
 
 class Events(commands.Cog):
     def __init__(self, bot, *args, **kwargs):
