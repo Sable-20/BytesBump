@@ -72,7 +72,7 @@ class Events(commands.Cog):
             await sleep(3) #owner only commmands
             await msg.delete()
         else:
-            await ctx.send(switch.get(error, "an unknown error occured"), delete_after=3.0)
+            await ctx.send(switch.get(type(error), "an unknown error occured"), delete_after=3.0)
         #uncomment to log every error
         # print(error)
 
